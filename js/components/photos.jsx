@@ -9,13 +9,21 @@ var PhotoListItem = React.createClass({
 		};
 	},
 	updateRights: function(evt) {
+		console.log("Clicked on image:" + this.props.keys + " " + !this.state.checked);
 		this.state.checked = (this.state.checked)? false : true;
+		//	modify the global object here
+		console.log(self.condeContributor);
+		self.condeContributor.data.forEach(function(imgObj) {
+			if (imgObj._id === this.props.keys) {
+				console.log("Setting image id:" + imgObj._id +  "hasRights to " + this.state.checked);
+				imgObj.rights.hasRights = this.state.checked;
+			}
+		}.bind(this));
 		this.setState({
 			checked: this.state.checked
 		});
 	},
 	render: function() {
-		console.log(this.props);
 		return (
 			<li>
 				<label onClick={this.updateRights} htmlFor={"img" + this.props.keys}><img src={this.props.imgsrc} className="img-responsive" /></label>

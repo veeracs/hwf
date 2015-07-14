@@ -17,11 +17,14 @@ module.exports = React.createClass({
 			console.log("Instagram images selected from the Conde repo...");
 			console.log(result);
 			self.condeContributor = result;
-			var userId = result.data[0].orig.user.id || result.data[0].contributor.id;
+			//	var userId = result.data[0].orig.user.id || result.data[0].contributor.id;
 			if (result.data) {
 				result.data.forEach(function(user) {
 					photos.push({id: user._id ,src: user.orig.images.standard_resolution.url, checked: true});
 				});
+				self.condeContributor.data.forEach(function(imgObj) {
+					imgObj.rights.hasRights = true;
+				}.bind(this));
 				this.setState({
 					appName: AppConfig.apps[this.props.appId].name,
 					photos: photos
@@ -39,6 +42,9 @@ module.exports = React.createClass({
 		};
 	},
 	socialLogin: function(evt) {
+		self.condeContributor.data.forEach(function(imgObj) {
+			console.log(imgObj.rights.hasRights);
+		}.bind(this));
 		//	call the OAuth.io API here
 		//	console.log(evt.target.value);
 		console.log(this.state.apiUrl);

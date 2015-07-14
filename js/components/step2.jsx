@@ -15,8 +15,18 @@ module.exports = React.createClass({
 	getInitialState: function() {
 		return {
 			name: "",
-			email: ""
+			email: "",
+			rights: ""
 		}
+	},
+	setRights: function() {
+		console.log("Set rights here and modify the payload!!!");
+		var contributorData = self.condeContributor.data;
+		var payload = {
+			rights: "approve",
+			data: contributorData
+		};
+
 	},
 	render: function() {
 		console.log("Insta user");
@@ -42,10 +52,10 @@ module.exports = React.createClass({
 							<div id="emailAddressMsg" className="alert-danger-inline hide"></div>
 						</div>
 						<div className="form-group use-photos">
-							<input id="usePhotos" type="checkbox" name="usePhotos" />
-							<label htmlFor="usePhotos">Condé Nast can use any of my photos</label>
+							<input id="allRights" type="checkbox" name="allRights" />
+							<label htmlFor="allRights">Condé Nast can use any of my photos</label>
 						</div>
-						<button type="submit" className="btn btn-success btn-lg btn-submit">Submit</button>
+						<button type="submit" onClick={this.setRights} className="btn btn-success btn-lg btn-submit">Submit</button>
 					</form>
 				</div>
 				<footer className="row site-footer">
