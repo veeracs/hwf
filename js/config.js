@@ -9,7 +9,11 @@ module.exports = {
         "newyorker": {
             "name": "The New Yorker",
             "site": "newyorker.com"
-        }
+        },
+		"gq": {
+			"name": "GQ",
+			"site": "gq.com"
+		}
     },
     "envs": {
 		dev: "http://localhost:3000/api/assets",
