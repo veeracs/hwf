@@ -10,7 +10,7 @@ var Step1 = require("./components/step1.jsx");
 var Step2 = require("./components/step2.jsx");
 
 var routes = (
-		<Route name="app" path="/" handler={App}><Route name="step1" path="/app/:appId/user/:userId/step1" handler={Step1} /><Route name="step2" path="/app/:appId/user/:userId/step2" handler={Step2} /></Route>
+		<Route name="app" path="/" handler={App}><Route name="step1" path="/:appId/:userId/1" handler={Step1} /><Route name="step2" path="/:appId/:userId/2" handler={Step2} /></Route>
 	);
 
 module.exports = routes;

@@ -14,7 +14,9 @@ module.exports = React.createClass({
 		var dataUrl = AppConfig.envs[this.props.hostname] + "?userID=" + this.props.userId;
 		var photos = [];
 		$.get(dataUrl, function(result) {
+			console.log("Instagram images selected from the Conde repo...");
 			console.log(result);
+			self.condeContributor = result;
 			var userId = result.data[0].orig.user.id || result.data[0].contributor.id;
 			if (result.data) {
 				result.data.forEach(function(user) {
@@ -49,9 +51,9 @@ module.exports = React.createClass({
 				username: result.user.username
 			};
 			if (instaUser.id === this.props.userId) {
-				//	IMP::DO NOT DO THIS IN PROD, no time setting up flux pattern
+				//	IMP:::DO NOT DO THIS IN PROD, no time setting up flux pattern
 				self.instaUser = instaUser;
-				document.location.href = "#/app/" + this.props.appId + "/user/" + this.props.userId + "/step2";
+				document.location.href = "#/" + this.props.appId + "/" + this.props.userId + "/2";
 			} else {
 				// display error message user is not authorized
 				alert("Instagram user " + instaUser.id + " cannot issue rights for the photos. Please login with a different Instagram user account.");

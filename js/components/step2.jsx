@@ -5,6 +5,8 @@ var AppConfig = require("../config");
 
 module.exports = React.createClass({
 	componentDidMount: function() {
+		console.log("Conde Contributor Object");
+		console.log(self.condeContributor);
 		this.setState({
 			name: self.instaUser.fullname || self.instaUser.username,
 			email: ""
@@ -19,12 +21,16 @@ module.exports = React.createClass({
 	render: function() {
 		console.log("Insta user");
 		console.log(self.instaUser);
+		if (!self.instaUser || (self.instaUser && !self.instaUser.accessToken)) {
+			console.log("user does not exist, kick the user back to step1");
+			document.location.href = "#/" + this.props.appId + "/" + this.props.userId + "/1";
+		}
 		return (
 			<div className="row">
 				<div className="col-xs-12">
 					<h4 className="tagline">You're almost done! Just fill out the form and submit.</h4>
 					<p>You'll be credited as:</p>
-					<p>Photo by <span className="social-user">@{self.instaUser.username}</span></p>
+					<p>Photo by <span className="social-user">@{this.state.name}</span></p>
 					<p className="alert alert-danger collapse cn-collapse" id="errorMessages" role="alert">Server error message</p>
 					<form className="form" role="form" noValidate>
 						<div className="form-group">
@@ -39,7 +45,7 @@ module.exports = React.createClass({
 							<input id="usePhotos" type="checkbox" name="usePhotos" />
 							<label htmlFor="usePhotos">Condé Nast can use any of my photos</label>
 						</div>
-						<button type="submit" className="btn btn-primary btn-lg btn-submit">Submit</button>
+						<button type="submit" className="btn btn-success btn-lg btn-submit">Submit</button>
 					</form>
 				</div>
 				<footer className="row site-footer">
