@@ -43,6 +43,8 @@ ul.list-unstyled {
 	vertical-align: super;
 	position: relative;
 	margin: 10px 0;
+	font-size: 1.4rem;
+	font-size: 14px;
 }
 .btn-submit {
 	width: 100%;
@@ -52,7 +54,7 @@ ul.list-unstyled {
 	margin-top: 30px;
 }
 .btn-social-txt {
-	padding-left: 35px;
+	padding-left: 25px;
 }
 
 .tagline {
@@ -60,9 +62,9 @@ ul.list-unstyled {
 }
 
 .fa-instagram {
-	font-size: 3rem;
+	font-size: 2rem;
 	position: absolute;
-	top:7px;
+	top:9px;
 }
 
 footer {
@@ -85,6 +87,18 @@ input[type="checkbox"].img-chk {
 	.btn-submit {
 		width: 400px;
 	}
+	.btn-social {
+		margin: 10px 0;
+		font-size: 1.8rem;
+		font-size: 18px;
+	}
+	.fa-instagram {
+		font-size: 3rem;
+		top: 7px;
+	}
+	.btn-social-txt {
+		padding-left: 35px;
+	}
 }
 
 /* Medium devices (desktops, 992px and up) */
@@ -99,4 +113,20 @@ input[type="checkbox"].img-chk {
 	.logo {
 		width: 30%;
 	}
+}
+
+/* Loading ... */
+.glyphicon-refresh-animate {
+    -animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+}
+
+@-webkit-keyframes spin2 {
+    from { -webkit-transform: rotate(0deg);}
+    to { -webkit-transform: rotate(360deg);}
+}
+
+@keyframes spin {
+    from { transform: scale(1) rotate(0deg);}
+    to { transform: scale(1) rotate(360deg);}
 }

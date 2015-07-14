@@ -4,22 +4,36 @@ var React = require("react");
 var AppConfig = require("../config");
 
 module.exports = React.createClass({
+	componentDidMount: function() {
+		this.setState({
+			name: self.instaUser.fullname || self.instaUser.username,
+			email: ""
+		});
+	},
+	getInitialState: function() {
+		return {
+			name: "",
+			email: ""
+		}
+	},
 	render: function() {
+		console.log("Insta user");
+		console.log(self.instaUser);
 		return (
 			<div className="row">
 				<div className="col-xs-12">
 					<h4 className="tagline">You're almost done! Just fill out the form and submit.</h4>
 					<p>You'll be credited as:</p>
-					<p>Photo by <span className="social-user">@vbfdf</span></p>
+					<p>Photo by <span className="social-user">@{self.instaUser.username}</span></p>
 					<p className="alert alert-danger collapse cn-collapse" id="errorMessages" role="alert">Server error message</p>
 					<form className="form" role="form" noValidate>
 						<div className="form-group">
-							<input className="form-control cn-form-control" type="text" name="fullname" id="fullname" placeholder="Full Name"/>
+							<input className="form-control cn-form-control" type="text" name="fullname" id="fullname" value={this.state.name} placeholder="Full Name"/>
 							<div id="passwordMsg" className="alert-danger-inline hide">Full name cannot be blank</div>
 						</div>
 						<div className="form-group">
 							<input className="form-control cn-form-control" type="email" name="emailAddress" id="emailAddress" placeholder="Email" pattern='^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'/>
-							<div id="emailAddressMsg" class="alert-danger-inline hide"></div>
+							<div id="emailAddressMsg" className="alert-danger-inline hide"></div>
 						</div>
 						<div className="form-group use-photos">
 							<input id="usePhotos" type="checkbox" name="usePhotos" />

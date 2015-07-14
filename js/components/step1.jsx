@@ -9,7 +9,7 @@ module.exports = React.createClass({
 		this.setState({appId: nextProps.appId});
 	},
 	componentDidMount: function() {
-		console.log(AppConfig.envs[this.props.hostname]);
+		console.info("API calls URI:::" + AppConfig.envs[this.props.hostname]);
 		//	get initial state from a store
 		var dataUrl = AppConfig.envs[this.props.hostname] + "?userID=" + this.props.userId;
 		var photos = [];
@@ -42,9 +42,23 @@ module.exports = React.createClass({
 		console.log(this.state.apiUrl);
 		OAuth.popup('instagram').done(function(result) {
 			console.log(result);
+			var instaUser = {
+				accessToken: result.access_token,
+				id: result.user.id,
+				fullname: result.user.full_name,
+				username: result.user.username
+			};
+			if (instaUser.id === this.props.userId) {
+				//	IMP::DO NOT DO THIS IN PROD, no time setting up flux pattern
+				self.instaUser = instaUser;
+				document.location.href = "#/app/" + this.props.appId + "/user/" + this.props.userId + "/step2";
+			} else {
+				// display error message user is not authorized
+				alert("Instagram user " + instaUser.id + " cannot issue rights for the photos. Please login with a different Instagram user account.");
+			}
 			//	document.location.href = "#/app/traveler/user/cveera/step2";
 			//	TODO: make API call
-		}).fail(function() {
+		}.bind(this)).fail(function() {
 			//todo when the OAuth flow failed
 		});
 	},
