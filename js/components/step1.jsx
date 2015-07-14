@@ -9,8 +9,10 @@ module.exports = React.createClass({
 		this.setState({appId: nextProps.appId});
 	},
 	componentDidMount: function() {
+		console.log(AppConfig.envs[this.props.hostname]);
 		//	get initial state from a store
-		$.get("", function(data) {
+		var dataUrl = AppConfig.envs[this.props.hostname] + "?userID=" + this.props.userId;
+		$.get(dataUrl, function(data) {
 			console.log(data);
 		});
 		this.setState({

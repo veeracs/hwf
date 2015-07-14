@@ -10,5 +10,9 @@ module.exports = {
             "name": "The New Yorker",
             "site": "newyorker.com"
         }
+    },
+    "envs": {
+		dev: "http://localhost:3000/api/assets",
+		prod: "http://drm.conde.io/api/assets"
     }
 };
