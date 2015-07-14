@@ -8,11 +8,17 @@ var PhotoListItem = React.createClass({
 			checked: this.props.checked
 		};
 	},
+	updateRights: function(evt) {
+		this.state.checked = (this.state.checked)? false : true;
+		this.setState({
+			checked: this.state.checked
+		});
+	},
 	render: function() {
 		console.log(this.props);
 		return (
 			<li>
-				<label htmlFor={"img" + this.props.keys}><img src={this.props.imgsrc} className="img-responsive" /></label>
+				<label onClick={this.updateRights} htmlFor={"img" + this.props.keys}><img src={this.props.imgsrc} className="img-responsive" /></label>
 				<input checked={this.state.checked} className="img-chk" id={"img" + this.props.keys} type="checkbox"/>
 			</li>
 		);
