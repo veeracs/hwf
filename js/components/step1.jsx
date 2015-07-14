@@ -32,15 +32,18 @@ module.exports = React.createClass({
 			appId: "",
 			appName: "",
 			logo: "https://cnee.condenastdigital.com/images/registration/" + this.props.appId + "Logo.png",
-			photos: []
+			photos: [],
+			apiUrl: AppConfig.envs[this.props.hostname]
 		};
 	},
 	socialLogin: function(evt) {
 		//	call the OAuth.io API here
 		//	console.log(evt.target.value);
+		console.log(this.state.apiUrl);
 		OAuth.popup('instagram').done(function(result) {
 			console.log(result);
 			//	document.location.href = "#/app/traveler/user/cveera/step2";
+			//	TODO: make API call
 		}).fail(function() {
 			//todo when the OAuth flow failed
 		});
