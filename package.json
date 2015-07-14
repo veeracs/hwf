@@ -38,11 +38,11 @@
       "node": true
     },
     "globals": {
-      "ra": false,
       "require": false,
       "module": false,
       "$": false,
-      "jQuery": false
+      "jQuery": false,
+      "OAuth": false
     },
     "ecmaFeatures": {
       "jsx": true
