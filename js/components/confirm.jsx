@@ -8,10 +8,11 @@ module.exports = React.createClass({
 		return (
 			<div className="row">
 				<div className="col-xs-12">
-					<h4 className="tagline">We'll email you a link to your photo as soon as it's posted, along with official <span className="company-name">Condé Nast</span> Contributor badge.</h4>
+					<h4 className="tagline confirm-thq">Thank You!</h4>
+					<p>We'll email you a link to your photo as soon as it's posted, along with official <span className="company-name">Condé Nast</span> Contributor badge.</p>
 				</div>
 				<div className="col-xs-12">
-					<p>FOLLOW US</p>
+					<p><img src="/images/social.gif" className="img-responsive social-icons" /></p>
 				</div>
 			</div>
 		);
