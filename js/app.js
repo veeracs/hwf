@@ -8,7 +8,7 @@ var Nav = require("./components/nav.jsx");
 module.exports = React.createClass({
 	render: function() {
 		return (
-			<div className="container-fluid hwf-container-fluid"><Nav appId={this.props.params.appId} userId={this.props.params.userId} path={this.props.path}/></div>
+			<div className="container-fluid hwf-container-fluid"><Nav appId={this.props.params.appId} userId={this.props.params.userId} path={this.props.path}/><Step1 appId={this.props.params.appId} userId={this.props.params.userId}/></div>
 		);
 	}
 });

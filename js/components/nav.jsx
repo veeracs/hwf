@@ -14,8 +14,8 @@ module.exports = React.createClass({
 		return (
 			<div className="row">
 				<div className="col-lg-12">
-					<div class="page-header">
-						<img src={this.state.logo} />
+					<div className="page-header logo">
+						<img className="img-responsive" src={this.state.logo} />
 					</div>
 				</div>
 			</div>

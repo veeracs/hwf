@@ -65,6 +65,7 @@
   },
   "homepage": "https://github.com/veeracs/hwf",
   "dependencies": {
-    "bootswatch": "^3.3.5"
+    "bootswatch": "^3.3.5",
+    "oauthio": "^0.3.1"
   }
 }

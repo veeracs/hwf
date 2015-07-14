@@ -15,5 +15,44 @@ html {
 }
 
 .hwf-container-fluid {
-	padding: 0;
+	padding: 20px;
+	text-align: center;
+}
+
+ul.list-unstyled {
+	margin: 20px auto;
+	li {
+		list-style: none;
+	}
+}
+
+.logo {
+	width: 55%;
+	margin: 0 auto;
+	border: none;
+}
+
+.tagline {
+	padding: 10px 0;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+	.logo {
+		width: 40%;
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+	.logo {
+		width: 35%;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+	.logo {
+		width: 30%;
+	}
 }
