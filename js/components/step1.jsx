@@ -12,16 +12,20 @@ module.exports = React.createClass({
 		console.log(AppConfig.envs[this.props.hostname]);
 		//	get initial state from a store
 		var dataUrl = AppConfig.envs[this.props.hostname] + "?userID=" + this.props.userId;
-		$.get(dataUrl, function(data) {
-			console.log(data);
-		});
-		this.setState({
-			appName: AppConfig.apps[this.props.appId].name,
-			photos: [
-				{id: "123", src: "http://google.com/images/image1.gif", checked: true},
-				{id: "234", src: "http://google.com/images/image2.gif", checked: true}
-			]
-		});
+		var photos = [];
+		$.get(dataUrl, function(result) {
+			console.log(result);
+			var userId = result.data[0].orig.user.id || result.data[0].contributor.id;
+			if (result.data) {
+				result.data.forEach(function(user) {
+					photos.push({id: user._id ,src: user.orig.images.standard_resolution.url, checked: true});
+				});
+				this.setState({
+					appName: AppConfig.apps[this.props.appId].name,
+					photos: photos
+				});
+			}
+		}.bind(this));
 	},
 	getInitialState: function() {
 		return {
