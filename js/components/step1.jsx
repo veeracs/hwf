@@ -31,7 +31,7 @@ module.exports = React.createClass({
 		//	console.log(evt.target.value);
 		OAuth.popup('instagram').done(function(instagram) {
 			instagram.me().done(function(me) {
-				//	console.log('Your name is ' + me.name)
+				console.log('Your name is ' + me.name)
 			})
 		}).fail(function() {
 			//todo when the OAuth flow failed
@@ -44,7 +44,7 @@ module.exports = React.createClass({
 					<h4 className="tagline">We Love Your Photo(s)</h4>
 					<p>Yes! I would like to become a Condé Nast digital contributor and have my photo featured on </p>
 					<PhotosList photos={this.state.photos} />
-					<p><a onClick={this.socialLogin}>Login to Instagram to confirm</a></p>
+					<p><a className="btn btn-primary btn-lg btn-social" onClick={this.socialLogin}><i className="fa fa-instagram"></i> <span className="btn-social-txt">Login to Instagram to confirm</span></a></p>
 					<p><a href="">No, I don't want to be famous.</a></p>
 				</div>
 			</div>
