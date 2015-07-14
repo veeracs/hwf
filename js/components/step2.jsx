@@ -21,11 +21,11 @@ module.exports = React.createClass({
 							<input className="form-control cn-form-control" type="email" name="emailAddress" id="emailAddress" placeholder="Email" pattern='^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$'/>
 							<div id="emailAddressMsg" class="alert-danger-inline hide"></div>
 						</div>
-						<div className="form-group">
+						<div className="form-group use-photos">
 							<input id="usePhotos" type="checkbox" name="usePhotos" />
 							<label htmlFor="usePhotos">Condé Nast can use any of my photos</label>
 						</div>
-						<button type="submit" className="btn cn-btn btn-primary btn-block">Submit</button>
+						<button type="submit" className="btn btn-primary btn-lg btn-submit">Submit</button>
 					</form>
 				</div>
 				<footer className="row site-footer">

@@ -10,6 +10,9 @@ module.exports = React.createClass({
 	},
 	componentDidMount: function() {
 		//	get initial state from a store
+		$.get("", function(data) {
+			console.log(data);
+		});
 		this.setState({
 			appName: AppConfig.apps[this.props.appId].name,
 			photos: [
