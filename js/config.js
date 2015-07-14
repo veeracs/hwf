@@ -1,10 +1,9 @@
 "use strict";
 
-
 module.exports = {
     "apps": {
         "traveler": {
-            "name": "Condé Nast Traveller",
+            "name": "Condé Nast Traveler",
             "site": "cntraveler.com"
         }
     }
