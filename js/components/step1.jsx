@@ -31,6 +31,7 @@ module.exports = React.createClass({
 		//	console.log(evt.target.value);
 		OAuth.popup('instagram').done(function(result) {
 			console.log(result);
+			//	document.location.href = "#/app/traveler/user/cveera/step2";
 		}).fail(function() {
 			//todo when the OAuth flow failed
 		});
