@@ -12,7 +12,7 @@ module.exports = {
         },
 		"gq": {
 			"name": "GQ",
-			"site": "gq.com"
+			"site": "GQ.com"
 		}
     },
     "envs": {
