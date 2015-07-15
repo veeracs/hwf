@@ -11,7 +11,7 @@ module.exports = React.createClass({
 	componentDidMount: function() {
 		console.info("API calls URI:::" + AppConfig.envs[this.props.hostname]);
 		//	get initial state from a store
-		var dataUrl = AppConfig.envs[this.props.hostname] + "?userID=" + this.props.userId;
+		var dataUrl = AppConfig.envs[this.props.hostname] + "?userID=" + this.props.userId + "&hasRights=false";
 		var photos = [];
 		$.get(dataUrl, function(result) {
 			console.log("Instagram images selected from the Conde repo...");
@@ -74,8 +74,8 @@ module.exports = React.createClass({
 		return (
 			<div className="row">
 				<div className="col-lg-12">
-					<h4 className="tagline">We Love Your Photo(s)</h4>
-					<p>Yes! I would like to become a <span className="company-name">Condé Nast</span> digital contributor and have my photo(s) featured on <b>{this.state.appName}</b></p>
+					<h4 className="tagline">We Love Your Photos</h4>
+					<p className="tagline-st">Yes! I would like to become a <span className="company-name">Condé Nast</span> digital contributor and have my photos featured on <b>{this.state.appName}</b></p>
 					<PhotosList photos={this.state.photos} />
 					<p><a className="btn btn-primary btn-lg btn-social" onClick={this.socialLogin}><i className="fa fa-instagram"></i> <span className="btn-social-txt">Login to Instagram to confirm</span></a></p>
 					<p><a href="">No, I don't want to be famous.</a></p>
