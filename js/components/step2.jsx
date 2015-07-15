@@ -67,6 +67,7 @@ module.exports = React.createClass({
 			<div className="row">
 				<div className="col-xs-12">
 					<h4 className="tagline">You're almost done! Just fill out the form and submit.</h4>
+					<hr className="underline" />
 					<p>You'll be credited as:</p>
 					<p>Photo by <span className="social-user">@{this.state.name}</span></p>
 					<p className="alert alert-danger collapse cn-collapse" id="errorMessages" role="alert">Server error message</p>
