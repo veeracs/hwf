@@ -15,7 +15,7 @@ module.exports = React.createClass({
 			<div className="row">
 				<div className="col-lg-12">
 					<div className="page-header logo">
-						<img className="img-responsive" src={this.state.logo} />
+						<img className="img-responsive logo-centered" src={this.state.logo} />
 					</div>
 				</div>
 			</div>

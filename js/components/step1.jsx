@@ -11,7 +11,7 @@ module.exports = React.createClass({
 	componentDidMount: function() {
 		console.info("API calls URI:::" + AppConfig.envs[this.props.hostname]);
 		//	get initial state from a store
-		var dataUrl = AppConfig.envs[this.props.hostname] + "?userID=" + this.props.userId + "&hasRights=false";
+		var dataUrl = AppConfig.envs[this.props.hostname] + "?userID=" + this.props.userId;
 		var photos = [];
 		$.get(dataUrl, function(result) {
 			console.log("Instagram images selected from the Conde repo...");
