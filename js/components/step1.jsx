@@ -79,7 +79,7 @@ module.exports = React.createClass({
 					<p className="tagline-st">Yes! I would like to become a <span className="company-name">Condé Nast Digital Contributor</span> and have my photos featured on <b>{this.state.appName}</b></p>
 					<PhotosList photos={this.state.photos} />
 					<p><a className="btn btn-primary btn-lg btn-social" onClick={this.socialLogin}><i className="fa fa-instagram"></i> <span className="btn-social-txt">Login to Instagram to confirm</span></a></p>
-					<p><a href="">No, I don't want to be famous.</a></p>
+					<p><a href="#">No, I don't want to be famous.</a></p>
 				</div>
 			</div>
 		);
